@@ -2,6 +2,8 @@
   --primary: #0fd850;
   --secondary: #43cea2;
   --accent: #ff004f;
+  --cv-btn: #6a11cb; /* New color for CV button */
+  --cv-btn-hover: #2575fc; /* Hover color for CV button */
   --dark: #0a0a1a;
   --darker: #060612;
   --light: #f0f0f0;
@@ -115,6 +117,20 @@ h1, h2, h3, h4 {
 .btn-outline:hover {
   background: var(--primary);
   color: #fff;
+}
+
+/* New CV button styles */
+.btn-cv {
+  background: linear-gradient(90deg, var(--cv-btn), var(--cv-btn-hover));
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.btn-cv:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(106, 17, 203, 0.5);
 }
 
 /* Header & Navigation */
@@ -247,6 +263,7 @@ header.scrolled {
 .hero-btns {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .hero-img {
@@ -847,6 +864,11 @@ footer {
     font-size: 1.5rem;
   }
   
+  .hero-btns {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
@@ -859,11 +881,6 @@ footer {
   
   .hero-text h2 {
     font-size: 1.2rem;
-  }
-  
-  .hero-btns {
-    flex-direction: column;
-    gap: 15px;
   }
   
   .tab-titles {
